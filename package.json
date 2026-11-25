@@ -1,0 +1,7 @@
+{
+  "name": "fix-human-sleep-patch-note",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "One line of patch notes announcing that human sleep has been fixed — make.fun bounty entry."
+}
