@@ -33,6 +33,17 @@ function main(): number {
     );
     return 1;
   }
+  // No control characters, finished sentence.
+  for (const ch of line) {
+    if (ch.charCodeAt(0) < 0x20 || ch.charCodeAt(0) === 0x7f) {
+      console.error("entry must not contain control characters");
+      return 1;
+    }
+  }
+  if (!/[.!?]$/.test(line)) {
+    console.error("entry must end with terminal punctuation");
+    return 1;
+  }
   const target = resolve(OUTPUT_PATH);
   mkdirSync(dirname(target), { recursive: true });
   writeFileSync(target, line, "utf-8");
